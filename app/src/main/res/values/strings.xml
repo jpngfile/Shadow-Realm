@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ShadowGame</string>
+    <string name="result_button_text">Go to results</string>
 </resources>

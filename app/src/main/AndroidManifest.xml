@@ -24,11 +24,12 @@
         </activity>
         <activity
             android:name=".PuzzleResult"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainMenu" />
         <activity android:name=".PuzzleLevels" />
         <activity android:name=".PuzzleStage" />
         <activity android:name=".PuzzleCamera"></activity>
-        <activity android:name=".StartingActivity"></activity>
+        <activity android:name=".MainMenu"></activity>
+        <activity android:name=".SplashScreen"></activity>
     </application>
 
 </manifest>

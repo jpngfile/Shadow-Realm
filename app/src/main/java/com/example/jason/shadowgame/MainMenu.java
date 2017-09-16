@@ -10,7 +10,7 @@ import android.widget.Button;
  * Created by Daniel on 2017-09-16.
  */
 
-public class MainMenuActivity extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity {
 
 
     Button resultButton;

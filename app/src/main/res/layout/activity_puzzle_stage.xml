@@ -1,17 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center|top"
+
     tools:context="com.example.jason.shadowgame.PuzzleStage">
+
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:rotation="180"
+
+        android:src="@drawable/background"
+        />
+
+    <ImageView
+        android:id="@+id/border"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_rect"
+        android:layout_marginTop="@dimen/activity_vertical_large_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_large_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_large_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_large_margin"
+        />
 
     <TextView
         android:id="@+id/stageLevelLabel"
         android:text="Level"
         android:textSize="30dp"
+        android:id="@+id/prompt"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textSize="24sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -37,3 +65,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:text="Pick up this shape!" />
+
+
+
+    <Button
+        android:id="@+id/button_image"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="takePicture"
+
+        android:text="I'm ready!"/>
+
+</RelativeLayout>

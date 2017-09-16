@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jason.shadowgame.StartingActivity">
+    tools:context="com.example.jason.shadowgame.MainActivity">
 
     <ImageView
         android:contentDescription="background"
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
-    />
+        />
 
     <TextView
         android:text="Shadows"
@@ -24,16 +24,16 @@
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/colorTitle"
         android:textStyle="bold|italic"
-    />
+        />
 
     <Button
-        android:id="@+id/playButton"
+        android:id="@+id/startButton"
         android:layout_gravity="center|bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play"
         android:textSize="25sp"
         android:layout_marginBottom="150dp"
-    />
+        />
 
 </FrameLayout>

@@ -1,17 +1,17 @@
 package com.example.jason.shadowgame;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by Daniel on 2017-09-16.
+ */
 
-    Button startButton;
+public class MainMenuActivity extends AppCompatActivity {
+
 
     Button resultButton;
     Button levelsButton;
@@ -21,48 +21,44 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        startButton = (Button) findViewById(R.id.startButton);
-
-        startButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, StartingActivity.class);
-                startActivity (i);
-            }
-        });
-
+        setContentView(R.layout.activity_main_menu);
 
         resultButton = (Button) findViewById(R.id.resultButton);
-        resultButton.setOnClickListener(new View.OnClickListener() {
+        resultButton.setOnClickListener(new View.OnClickListener()
+
+        {
             @Override
             public void onClick(View v) {
-               viewResults(v);
+                viewResults(v);
             }
         });
         levelsButton = (Button) findViewById(R.id.levelsButton);
-        levelsButton.setOnClickListener(new View.OnClickListener() {
+        levelsButton.setOnClickListener(new View.OnClickListener()
+
+        {
             @Override
             public void onClick(View v) {
                 viewLevels(v);
             }
         });
         stageButton = (Button) findViewById(R.id.stageButton);
-        stageButton.setOnClickListener(new View.OnClickListener() {
+        stageButton.setOnClickListener(new View.OnClickListener()
+
+        {
             @Override
             public void onClick(View v) {
                 viewStage(v);
             }
         });
         cameraButton = (Button) findViewById(R.id.cameraButton);
-        cameraButton.setOnClickListener(new View.OnClickListener() {
+        cameraButton.setOnClickListener(new View.OnClickListener()
+
+        {
             @Override
             public void onClick(View v) {
                 viewCamera(v);
             }
         });
-
     }
 
     public void viewResults(View view) {

@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">ShadowGame</string>
     <string name="result_button_text">Go to results</string>
-    <string name="result_go_button_text">I got it!</string>
+    <string name="result_go_button_text">continue</string>
 </resources>

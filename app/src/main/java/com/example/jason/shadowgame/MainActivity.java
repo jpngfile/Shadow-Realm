@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void viewResults(View view) {
         Intent resultIntent = new Intent(this, PuzzleResult.class);
-        resultIntent.putExtra("pic", "picText");
+        resultIntent.putExtra("pic", R.drawable.clay_block);
+        resultIntent.putExtra("isSuccessful", false);
         startActivity(resultIntent);
     }
 }

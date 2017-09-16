@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.jason.shadowgame.PuzzleCamera">
 
+    <TextView
+        android:id="@+id/cameraText"
+        android:text="Camera page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </android.support.constraint.ConstraintLayout>

@@ -31,21 +31,21 @@ public class MainActivity extends AppCompatActivity {
         levelsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewResults(v);
+                viewLevels(v);
             }
         });
         stageButton = (Button) findViewById(R.id.stageButton);
         stageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewResults(v);
+                viewStage(v);
             }
         });
         cameraButton = (Button) findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewResults(v);
+                viewCamera(v);
             }
         });
 

@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Random;
+
 /**
  * Created by Daniel on 2017-09-16.
  */
@@ -47,7 +49,8 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainMenu.this, PuzzleStage.class);
-                i.putExtra("level", 1);
+                Random r = new Random ();
+                i.putExtra("level", r.nextInt(5));
                 startActivity (i);
             }
         });

@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
     tools:context="com.example.jason.shadowgame.PuzzleStage">
+
     <TextView
-        android:id="@+id/stageText"
-        android:text="stage page"
+        android:id="@+id/stageLevelLabel"
+        android:text="Level"
+        android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-</android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/stageImage"
+        android:src="@drawable/level_1"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        />
+
+    <Button
+        android:id="@+id/stageStart"
+        android:text="Start"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/stageBack"
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

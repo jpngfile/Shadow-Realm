@@ -25,34 +25,35 @@ public class MainMenu extends AppCompatActivity {
 
         resultButton = (Button) findViewById(R.id.resultButton);
         resultButton.setOnClickListener(new View.OnClickListener()
-
         {
             @Override
             public void onClick(View v) {
                 viewResults(v);
             }
         });
+
         levelsButton = (Button) findViewById(R.id.levelsButton);
         levelsButton.setOnClickListener(new View.OnClickListener()
-
         {
             @Override
             public void onClick(View v) {
                 viewLevels(v);
             }
         });
+
         stageButton = (Button) findViewById(R.id.stageButton);
         stageButton.setOnClickListener(new View.OnClickListener()
-
         {
             @Override
             public void onClick(View v) {
-                viewStage(v);
+                Intent i = new Intent(MainMenu.this, PuzzleStage.class);
+                i.putExtra("level", 1);
+                startActivity (i);
             }
         });
+
         cameraButton = (Button) findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(new View.OnClickListener()
-
         {
             @Override
             public void onClick(View v) {

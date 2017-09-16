@@ -13,16 +13,16 @@ import android.widget.Button;
 
 public class SplashScreen extends AppCompatActivity {
 
-    Button startButton;
+    Button splashStart;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
 
-        startButton = (Button) findViewById(R.id.startButton);
+        splashStart = (Button) findViewById(R.id.splashStart);
 
-        startButton.setOnClickListener(new View.OnClickListener() {
+        splashStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(SplashScreen.this, MainMenu.class);

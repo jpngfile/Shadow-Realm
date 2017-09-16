@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">ShadowGame</string>
-    <string name="result_button_text">Go to results</string>
+    <string name="levels_button_text">Go to levels page</string>
+    <string name="stage_button_text">Go to stage page</string>
+    <string name="camera_button_text">Go to camera page</string>
+    <string name="result_button_text">Go to results page</string>
     <string name="result_go_button_text">continue</string>
 </resources>

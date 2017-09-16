@@ -22,8 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PuzzleResult"
-                  android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".PuzzleResult"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".PuzzleLevels" />
+        <activity android:name=".PuzzleStage" />
+        <activity android:name=".PuzzleCamera"></activity>
     </application>
 
 </manifest>

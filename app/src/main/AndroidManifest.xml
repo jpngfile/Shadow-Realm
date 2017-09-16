@@ -4,6 +4,8 @@
 
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
     <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -19,6 +21,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PuzzleResult"
+            android:parentActivityName=".MainMenu" />
+        <activity android:name=".PuzzleLevels" />
+        <activity android:name=".PuzzleStage" />
+        <activity android:name=".PuzzleCamera"></activity>
+        <activity android:name=".MainMenu"></activity>
+        <activity android:name=".SplashScreen"></activity>
     </application>
 
 </manifest>

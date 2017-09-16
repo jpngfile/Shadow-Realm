@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.example.jason.shadowgame.MainActivity">
+    tools:context="com.example.jason.shadowgame.PuzzleStage">
 
     <ImageView
         android:id="@+id/imageview"

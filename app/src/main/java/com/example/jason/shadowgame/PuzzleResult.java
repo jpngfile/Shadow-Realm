@@ -59,17 +59,21 @@ public class PuzzleResult extends AppCompatActivity {
         grayBitmap.getPixels(pixels, 0, width, 0, 0, width, height);
 
         //iterate over pixels
+        //This can be optimized with multi-threading
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width; x++){
                 int pixel = grayBitmap.getPixel(x, y);
                 int lowestByte = pixel & 0xff;
                 if (lowestByte < 128) {
-                    grayBitmap.setPixel(x, y, Color.BLACK);
+                    //grayBitmap.setPixel(x, y, Color.BLACK);
+                    pixels[(y * width) + x] = Color.BLACK;
                 } else {
-                    grayBitmap.setPixel(x, y, Color.WHITE);
+                    //grayBitmap.setPixel(x, y, Color.WHITE);
+                    pixels[(y * width) + x] = Color.WHITE;
                 }
             }
         }
+        grayBitmap.setPixels(pixels, 0, width, 0, 0, width, height);
         return grayBitmap;
     }
 }

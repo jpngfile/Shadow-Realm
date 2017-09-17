@@ -54,15 +54,6 @@ public class MainMenu extends AppCompatActivity {
                 startActivity (i);
             }
         });
-
-        cameraButton = (Button) findViewById(R.id.cameraButton);
-        cameraButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                viewCamera(v);
-            }
-        });
     }
 
     public void viewResults(View view) {

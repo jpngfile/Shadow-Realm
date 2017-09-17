@@ -19,11 +19,13 @@ public class PuzzleResult extends AppCompatActivity {
 
     ImageView resultImageView;
     TextView resultTextView;
+    ImagePHash pHash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle_result);
+        pHash = new ImagePHash();
         resultImageView = (ImageView) findViewById(R.id.result_image);
         resultTextView = (TextView) findViewById(R.id.result_text);
         Bundle extras = getIntent().getExtras();
@@ -33,6 +35,11 @@ public class PuzzleResult extends AppCompatActivity {
         }
         boolean isSuccessful = extras.getBoolean("isSuccessful");
         resultTextView.setText(isSuccessful ? "Congratulations!" : "Try again.");
+    }
+
+    private double getPercentSimilar(Bitmap img, String hash){
+        String imgHash = pHash.calcPHash(img);
+        return pHash.distance(imgHash, hash) / imgHash.length();
     }
 
 }

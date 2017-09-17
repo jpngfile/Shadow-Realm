@@ -45,7 +45,7 @@ public class ImagePHash {
     }
 
     // Returns a 'binary string' (like. 001010111011100010) which is easy to do a hamming distance on.
-    public String culcPHash(Bitmap img) {
+    public String calcPHash(Bitmap img) {
 
         /* 1. Reduce size.
          * Like Average Hash, pHash starts with a small image.

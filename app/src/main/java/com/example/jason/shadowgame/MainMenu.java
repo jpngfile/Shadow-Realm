@@ -49,8 +49,8 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainMenu.this, PuzzleStage.class);
-                Random r = new Random ();
-                i.putExtra("level", r.nextInt(5));
+                //Random r = new Random ();
+                i.putExtra("level", 1);
                 startActivity (i);
             }
         });
@@ -65,15 +65,5 @@ public class MainMenu extends AppCompatActivity {
     public void viewLevels(View view) {
         Intent levelsIntent = new Intent(this, PuzzleLevels.class);
         startActivity(levelsIntent);
-    }
-
-    public void viewStage(View view) {
-        Intent stageIntent = new Intent(this, PuzzleStage.class);
-        startActivity(stageIntent);
-    }
-
-    public void viewCamera(View view) {
-        Intent cameraIntent = new Intent(this, PuzzleCamera.class);
-        startActivity(cameraIntent);
     }
 }

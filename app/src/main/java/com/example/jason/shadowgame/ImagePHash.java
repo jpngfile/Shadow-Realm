@@ -156,7 +156,7 @@ public class ImagePHash {
         return blackAndWhiteBitmap;
     }
 
-    private Bitmap blackWhite(Bitmap originalBitmap) {
+    public Bitmap blackWhite(Bitmap originalBitmap) {
         Bitmap grayBitmap = grayscale(originalBitmap);
         int width = grayBitmap.getWidth();
         int height = grayBitmap.getHeight();

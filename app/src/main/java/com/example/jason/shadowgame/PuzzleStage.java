@@ -32,7 +32,6 @@ public class PuzzleStage extends AppCompatActivity {
     ImageView stageImage;
     Uri file;
 
-    final int CORNER_WIDTH = 30;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
@@ -59,7 +58,7 @@ public class PuzzleStage extends AppCompatActivity {
         stageLevelLabel.setText("Level " + level);
 
         stageImage = (ImageView) findViewById(R.id.stageImage);
-        displayImage(stageImage, BitmapFactory.decodeResource(getResources(), getDrawableId (level)));
+        Util.displayImage(stageImage, BitmapFactory.decodeResource(getResources(), getDrawableId (level)));
 
         stageStart = (Button) findViewById(R.id.stageStart);
         stageStart.setOnClickListener(new View.OnClickListener() {
@@ -67,12 +66,9 @@ public class PuzzleStage extends AppCompatActivity {
             public void onClick(View view) {
                 File outFile = getOutputMediaFile();
                 takePicture();
-                Log.d("PuzzleCamera", outFile.getAbsolutePath());
+                Log.d("PuzzleStageCamera", outFile.getAbsolutePath());
                 stageLevelLabel.setText("Level " + level + "[" + file.getPath() + "]");
-                /*
-                Intent i = new Intent(PuzzleStage.this, PuzzleCamera.class);
-                i.putExtra("fileUrl", outFile.getAbsolutePath());
-                startActivity (i);*/
+
             }
         });
 
@@ -93,8 +89,15 @@ public class PuzzleStage extends AppCompatActivity {
         if (requestCode == 100) {
             if (resultCode == RESULT_OK) {
                 trimPicture(file);
-                displayImage(stageImage, BitmapFactory.decodeFile(file.getPath()));
+                Util.displayImage(stageImage, BitmapFactory.decodeFile(file.getPath()));
                 stageImage.setScaleType(FIT_XY);
+
+
+                Intent i = new Intent(PuzzleStage.this, PuzzleResult.class);
+                i.putExtra("fileUrl", file.getPath());
+                i.putExtra("levelUrl", getDrawableId(level));
+
+                startActivity (i);
             }
         }
     }
@@ -124,30 +127,11 @@ public class PuzzleStage extends AppCompatActivity {
         return getResources().getIdentifier("level_" + level, "drawable", "com.example.jason.shadowgame");
     }
 
-    private void displayImage (ImageView view, Bitmap bm) {
-        view.setImageBitmap(Util.getRoundedCornerBitmap(bm, CORNER_WIDTH));
-    }
-
     private void trimPicture (Uri uri) {
         Bitmap original = BitmapFactory.decodeFile(uri.getPath());
         int margin = (original.getHeight() - original.getWidth()) / 2;
         Bitmap modified = Bitmap.createBitmap(original, 0, margin, original.getWidth(), original.getWidth());
-        FileOutputStream out = null;
-        try {
-            out = new FileOutputStream(uri.getPath());
-            modified.compress(Bitmap.CompressFormat.PNG, 100, out); // bmp is your Bitmap instance
-            // PNG is a lossless format, the compression factor (100) is ignored
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (out != null) {
-                    out.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        Util.outputBitmap(modified, uri.getPath());
     }
 }
 

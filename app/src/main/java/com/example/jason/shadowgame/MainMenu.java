@@ -59,7 +59,6 @@ public class MainMenu extends AppCompatActivity {
     public void viewResults(View view) {
         Intent resultIntent = new Intent(this, PuzzleResult.class);
         resultIntent.putExtra("pic", R.drawable.man_shadow);
-        resultIntent.putExtra("isSuccessful", false);
         startActivity(resultIntent);
     }
 

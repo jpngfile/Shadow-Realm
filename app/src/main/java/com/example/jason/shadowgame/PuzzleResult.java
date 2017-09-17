@@ -33,8 +33,15 @@ public class PuzzleResult extends AppCompatActivity {
             int pic = extras.getInt("pic");
             resultImageView.setImageResource(pic);
         }
-        boolean isSuccessful = extras.getBoolean("isSuccessful");
-        resultTextView.setText(isSuccessful ? "Congratulations!" : "Try again.");
+        if (extras.containsKey("fileUrl")) {
+            double percent = 0;
+            String defaultHash = "0000101100000111110110111111000010110000010101010";
+            String fileUrl = extras.getString("fileUrl");
+            // Bitmap bmp = bitmap from fileUrl
+            //percent = getPercentSimilar(bmp, defaultHash);
+            resultTextView.setText("Percentage: " + percent);
+        }
+
     }
 
     private double getPercentSimilar(Bitmap img, String hash){

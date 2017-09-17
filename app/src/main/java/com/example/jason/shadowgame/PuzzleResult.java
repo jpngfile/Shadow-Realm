@@ -32,29 +32,8 @@ public class PuzzleResult extends AppCompatActivity {
         resultTextView = (TextView) findViewById(R.id.result_text);
         Bundle extras = getIntent().getExtras();
         int pic = extras.getInt("pic");
-
-        Bitmap bmp = ((BitmapDrawable) getResources()
-                .getDrawable(pic)).getBitmap();
-        Bitmap blackWhiteBmp = blackWhite(resize(bmp, size, size));
-
-        Bitmap compareBmp = ((BitmapDrawable) getResources()
-                .getDrawable(R.drawable.man_shadow_black_white)).getBitmap();
-        //compareBmp = resize(compareBmp, size, size);
-
-        Bitmap diffBmp = ((BitmapDrawable) getResources()
-                .getDrawable(R.drawable.level_0)).getBitmap();
-
-        //int[] hash1 = imageHash(bmp);
-        //int[] hash2 = imageHash(compareBmp);
-        //System.out.println("Hash1: " + hash1.length);
-        //System.out.println("Hash2: " + hash2.length);
-        String hash1 = calcPHash(bmp);
-        String hash2 = calcPHash(compareBmp);
-        String hash3 = calcPHash(diffBmp);
-        System.out.println("Distance: " + distance(hash1, hash2));
-        System.out.println("Diff Distance: " + distance(hash1, hash3));
-
-        resultImageView.setImageBitmap(blackWhiteBmp);
+        
+        resultImageView.setImageResource(pic);
         boolean isSuccessful = extras.getBoolean("isSuccessful");
         resultTextView.setText(isSuccessful ? "Congratulations!" : "Try again.");
     }

@@ -1,7 +1,6 @@
 package com.example.jason.shadowgame;
 
 import static android.widget.ImageView.ScaleType.FIT_XY;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,10 +16,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -66,9 +62,6 @@ public class PuzzleStage extends AppCompatActivity {
             public void onClick(View view) {
                 File outFile = getOutputMediaFile();
                 takePicture();
-                Log.d("PuzzleStageCamera", outFile.getAbsolutePath());
-                stageLevelLabel.setText("Level " + level + "[" + file.getPath() + "]");
-
             }
         });
 
@@ -96,6 +89,7 @@ public class PuzzleStage extends AppCompatActivity {
                 Intent i = new Intent(PuzzleStage.this, PuzzleResult.class);
                 i.putExtra("fileUrl", file.getPath());
                 i.putExtra("levelUrl", getDrawableId(level));
+                i.putExtra("level", level);
 
                 startActivity (i);
             }

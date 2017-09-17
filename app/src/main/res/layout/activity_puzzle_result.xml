@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.example.jason.shadowgame.PuzzleResult">
 
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:rotation="180"
+
+        android:src="@drawable/background"
+        />
+
     <TextView
         android:id="@+id/resultLabel"
         android:text="Default text"

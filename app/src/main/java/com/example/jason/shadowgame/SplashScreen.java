@@ -25,7 +25,7 @@ public class SplashScreen extends AppCompatActivity {
         splashStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(SplashScreen.this, MainMenu.class);
+                Intent i = new Intent(SplashScreen.this, PuzzleLevels.class);
                 startActivity (i);
             }
         });

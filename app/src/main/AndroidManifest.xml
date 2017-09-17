@@ -20,9 +20,7 @@
             android:name=".PuzzleResult"
             android:parentActivityName=".MainMenu" />
         <activity android:name=".PuzzleLevels" />
-        <activity android:name=".PuzzleStage">
-            android:noHistory="true"
-        </activity>
+        <activity android:name=".PuzzleStage" />
         <activity android:name=".MainMenu"></activity>
         <activity android:name=".SplashScreen">
             <intent-filter>

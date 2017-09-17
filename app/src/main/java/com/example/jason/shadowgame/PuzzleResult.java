@@ -1,5 +1,6 @@
 package com.example.jason.shadowgame;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -18,6 +19,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class PuzzleResult extends AppCompatActivity {
@@ -43,29 +46,36 @@ public class PuzzleResult extends AppCompatActivity {
         resultContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent i = new Intent (PuzzleResult.this, PuzzleLevels.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity (i);
             }
         });
 
         Bundle extras = getIntent().getExtras();
 
-        if (extras.containsKey("fileUrl") && extras.containsKey("levelUrl")) {
+        if (extras.containsKey("fileUrl") && extras.containsKey("levelUrl") && extras.containsKey("level")) {
             double percent = 0;
             //String defaultHash = "0000101100000111110110111111000010110000010101010";
             String fileUrl = extras.getString("fileUrl");
             int levelUrl = extras.getInt("levelUrl");
 
+            String label = "Level " + extras.getInt("level") + " results";
+            resultLabel.setText(label);
+
             Bitmap bmp = BitmapFactory.decodeFile (fileUrl);
             Bitmap bwBmp = pHash.blackWhite(bmp);
             Util.outputBitmap(bwBmp, fileUrl + ".jpg");
             Bitmap compareBmp = BitmapFactory.decodeResource(getResources(), levelUrl);
-            percent = getPercentSimilar(compareBmp, pHash.calcPHash(bmp));
+            percent = getPercentSimilar(compareBmp, pHash.calcPHash(bmp)) * 100;
 
             Util.displayImage(resultUser, BitmapFactory.decodeFile(fileUrl + ".jpg"));
             Util.displayImage(resultExpected, compareBmp);
 
             Log.d ("Accuracy", "" + percent);
-            resultScore.setText("Accuracy: " + percent + "%");
+            String text = "Accuracy: " + new DecimalFormat("#.##").format (percent) + "%";
+            resultScore.setText(text);
         }
 
     }

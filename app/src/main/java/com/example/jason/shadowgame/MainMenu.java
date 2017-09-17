@@ -30,7 +30,9 @@ public class MainMenu extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-                viewResults(v);
+                Intent resultIntent = new Intent(MainMenu.this, PuzzleResult.class);
+                resultIntent.putExtra("pic", R.drawable.man_shadow);
+                startActivity(resultIntent);
             }
         });
 
@@ -39,7 +41,8 @@ public class MainMenu extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-                viewLevels(v);
+                Intent levelsIntent = new Intent(MainMenu.this, PuzzleLevels.class);
+                startActivity(levelsIntent);
             }
         });
 
@@ -54,16 +57,5 @@ public class MainMenu extends AppCompatActivity {
                 startActivity (i);
             }
         });
-    }
-
-    public void viewResults(View view) {
-        Intent resultIntent = new Intent(this, PuzzleResult.class);
-        resultIntent.putExtra("pic", R.drawable.man_shadow);
-        startActivity(resultIntent);
-    }
-
-    public void viewLevels(View view) {
-        Intent levelsIntent = new Intent(this, PuzzleLevels.class);
-        startActivity(levelsIntent);
     }
 }
